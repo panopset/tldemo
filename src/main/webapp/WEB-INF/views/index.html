@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <link rel="stylesheet" type="text/css" href="css/cool.css"/>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <title>Thymeleaf Demo</title>
+</head>
+<body>
+ <div id="bgdimg">
+ </div>
+
+ <div class="float_right">
+  <!-- Here is how you would accomplish i18n -->
+  <h1 th:text="#{greeting}">Hello!</h1>
+  <table>
+   <!-- Here is how you would iterate through a list of Java Objects. -->
+   <tr th:each="foo : ${fooList}">
+    <td th:text="${foo.name}">Leave room for more...</td> 
+   </tr>
+  </table>
+ </div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+apply plugin: 'war'
+
+repositories {
+ mavenCentral()
+}
+
+dependencies {
+ testCompile 'junit:junit:' + junit_version
+ compile 'org.springframework:spring-webmvc:' + spring_version
+ compile 'org.thymeleaf:thymeleaf:' + thymeleaf_version
+ compile 'org.thymeleaf:thymeleaf-spring4:' + thymeleaf_version
+ providedCompile 'javax.servlet:javax.servlet-api:' + servlet_api_version
+}
