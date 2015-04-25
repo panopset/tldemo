@@ -14,6 +14,9 @@ import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
+import com.panopset.demo.data.FooDAO;
+import com.panopset.demo.data.FooDAOImpl;
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.panopset.demo.tl" })

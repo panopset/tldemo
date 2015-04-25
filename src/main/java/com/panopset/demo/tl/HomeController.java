@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.panopset.demo.data.FooDAO;
+
 @Controller
 @RequestMapping("/")
 public class HomeController {

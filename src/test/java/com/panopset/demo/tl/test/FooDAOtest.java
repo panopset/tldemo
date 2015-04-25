@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.panopset.demo.tl.Foo;
-import com.panopset.demo.tl.FooDAO;
-import com.panopset.demo.tl.FooDAOImpl;
+import com.panopset.demo.data.Foo;
+import com.panopset.demo.data.FooDAO;
+import com.panopset.demo.data.FooDAOImpl;
 
 /**
  * 

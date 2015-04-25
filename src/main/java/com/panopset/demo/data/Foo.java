@@ -1,4 +1,4 @@
-package com.panopset.demo.tl;
+package com.panopset.demo.data;
 
 public class Foo {
 
