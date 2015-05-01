@@ -1,16 +1,29 @@
 package com.panopset.demo.data;
 
-public class Foo {
+/**
+ * Simple database Object Java representation, for demo.
+ * @author Karl Dinwiddie.
+ *
+ */
+public final class Foo {
 
+    /**
+     * @param fooName Foo name.
+     */
     public Foo(final String fooName) {
-        id = lastID++;
         name = fooName;
     }
 
+    /**
+     * @return Foo id.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * @return Name key.
+     */
     public String getName() {
         return name;
     }
@@ -20,12 +33,15 @@ public class Foo {
         final int prime = 31;
         int result = 1;
         result = prime * result + id;
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result;
+        if (name != null) {
+            result += name.hashCode();
+        }
         return result;
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         if (this == obj) {
             return true;
         }
@@ -49,8 +65,13 @@ public class Foo {
         return true;
     }
 
-    private static int lastID = 0;
+    /**
+     * Database record id.
+     */
+    private int id;
 
-    private final int id;
+    /**
+     * Foo unique name.
+     */
     private final String name;
 }

@@ -1,22 +1,33 @@
+
 package com.panopset.demo.tl;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import org.springframework.web.servlet.support
 
-public class SpringBoard extends
+.AbstractAnnotationConfigDispatcherServletInitializer;
+
+/**
+ * Spring XMLless annotation driven configuration entry point.
+ * @author Karl Dinwiddie
+ *
+ */
+public final class SpringBoard extends
         AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] { DispatcherConfig.class };
+        return new Class<?>[] {
+                HomeModel.class };
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { HomeController.class };
+        return new Class[] {
+                HomeController.class };
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] { "/" };
+        return new String[] {
+                "/" };
     }
 }

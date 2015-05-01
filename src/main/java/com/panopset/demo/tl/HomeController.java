@@ -1,3 +1,4 @@
+
 package com.panopset.demo.tl;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,12 +11,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.panopset.demo.data.FooDAO;
 
+/**
+ * MVC Controller.
+ * @author Karl Dinwiddie
+ *
+ */
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public final class HomeController {
 
+    /**
+     * Foo database access object.
+     */
     @Autowired
-    FooDAO fooDAO;
+    private FooDAO fooDAO;
 
     /**
      * Handle http request.
@@ -27,7 +36,8 @@ public class HomeController {
      * @return index.
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String handleRequest(Model model, HttpServletRequest request) {
+    public String handleRequest(final Model model,
+            final HttpServletRequest request) {
         model.addAttribute("fooList", fooDAO.getFeaturedFoos());
         return "index";
     }

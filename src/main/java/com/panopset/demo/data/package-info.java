@@ -1,4 +1,4 @@
 /**
- * Data package
+ * Data package.
  */
 package com.panopset.demo.data;
