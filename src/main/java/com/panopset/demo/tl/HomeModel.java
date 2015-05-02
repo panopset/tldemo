@@ -5,24 +5,15 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import
-
-org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import
-
-org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import
-
-org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
-
-import com.panopset.demo.data.FooDAO;
-import com.panopset.demo.data.list.FooDAOArrayImpl;
 
 /**
  * MVC Model.
@@ -34,14 +25,6 @@ import com.panopset.demo.data.list.FooDAOArrayImpl;
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.panopset.demo.tl" })
 public class HomeModel extends WebMvcConfigurerAdapter {
-
-    /**
-     * @return FooDAO implementation.
-     */
-    @Bean
-    public FooDAO storeDAO() {
-        return new FooDAOArrayImpl();
-    }
 
     /**
      * This is all we need to supply the value for #{greeting}, and other

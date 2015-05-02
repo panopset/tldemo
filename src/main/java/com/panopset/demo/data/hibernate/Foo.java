@@ -14,6 +14,12 @@ import javax.persistence.Id;
 public final class Foo {
 
     /**
+     * Default constructor.
+     */
+    public Foo() {
+    }
+    
+    /**
      * @param fooName Foo name.
      */
     public Foo(final String fooName) {
@@ -49,5 +55,5 @@ public final class Foo {
     /**
      * Foo unique name.
      */
-    private final String name;
+    private String name;
 }

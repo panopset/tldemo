@@ -9,7 +9,12 @@ dependencies {
  compile 'org.hibernate:hibernate-core:' + hibernate_version
  compile 'org.hibernate:hibernate-entitymanager:' + hibernate_version
  compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
+ compile 'org.springframework:spring-beans:' + spring_version
+ compile 'org.springframework:spring-context:' + spring_version
+ compile 'org.springframework:spring-core:' + spring_version
  compile 'org.springframework:spring-webmvc:' + spring_version
+ compile 'org.springframework:spring-orm:' + spring_version
+ compile 'org.springframework:spring-tx:' + spring_version
  compile 'org.thymeleaf:thymeleaf:' + thymeleaf_version
  compile 'org.thymeleaf:thymeleaf-spring4:' + thymeleaf_version
  compile 'com.h2database:h2:' + h2_version
