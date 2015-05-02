@@ -5,6 +5,7 @@ bin
 .classpath
 .settings
 .nb-gradle
+target
 
 # Ignore Gradle GUI config
 gradle-app.setting
