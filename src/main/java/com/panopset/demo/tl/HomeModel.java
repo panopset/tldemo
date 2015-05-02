@@ -33,7 +33,7 @@ import com.panopset.demo.data.list.FooDAOArrayImpl;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.panopset.demo.tl" })
-public final class HomeModel extends WebMvcConfigurerAdapter {
+public class HomeModel extends WebMvcConfigurerAdapter {
 
     /**
      * @return FooDAO implementation.

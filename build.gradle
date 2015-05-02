@@ -5,9 +5,18 @@ repositories {
 }
 
 dependencies {
- testCompile 'junit:junit:' + junit_version
+ compile 'org.springframework.data:spring-data-jpa:' + jpa_version
+ compile 'org.hibernate:hibernate-core:' + hibernate_version
+ compile 'org.hibernate:hibernate-entitymanager:' + hibernate_version
+ compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
  compile 'org.springframework:spring-webmvc:' + spring_version
  compile 'org.thymeleaf:thymeleaf:' + thymeleaf_version
  compile 'org.thymeleaf:thymeleaf-spring4:' + thymeleaf_version
+ compile 'com.h2database:h2:' + h2_version
+ 
+ 
+ providedCompile 'org.springframework:spring-test:' + spring_version
  providedCompile 'javax.servlet:javax.servlet-api:' + servlet_api_version
+
+ testCompile 'junit:junit:' + junit_version
 }

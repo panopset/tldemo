@@ -2,6 +2,8 @@ package com.panopset.demo.data;
 
 import java.util.List;
 
+import com.panopset.demo.data.hibernate.Foo;
+
 /**
  * Foo DAO.
  * @author Karl Dinwiddie

@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.panopset.demo.data.Foo;
 import com.panopset.demo.data.FooDAO;
+import com.panopset.demo.data.FooSampleData;
+import com.panopset.demo.data.hibernate.Foo;
 
 /**
  * For the demo, we'll just use an internal Array.
@@ -37,9 +38,9 @@ public final class FooDAOArrayImpl implements FooDAO {
     @Override
     public synchronized List<Foo> getFeaturedFoos() {
         if (foos.isEmpty()) {
-            insertFoo(new Foo("Item 1..."));
-            insertFoo(new Foo("Item 2..."));
-            insertFoo(new Foo("Item 3..."));
+            for (Foo foo : new FooSampleData().getArray()) {
+                insertFoo(foo);
+            }
         }
         return foos;
     }

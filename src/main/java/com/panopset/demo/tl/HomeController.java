@@ -1,6 +1,9 @@
 
 package com.panopset.demo.tl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.panopset.demo.data.FooDAO;
+import com.panopset.demo.data.FooSampleData;
+import com.panopset.demo.data.hibernate.Foo;
+import com.panopset.demo.data.repo.FooRepository;
 
 /**
  * MVC Controller.
@@ -21,10 +26,10 @@ import com.panopset.demo.data.FooDAO;
 public final class HomeController {
 
     /**
-     * Foo database access object.
-     */
+    * Foo database access object.
+    */
     @Autowired
-    private FooDAO fooDAO;
+    private FooRepository fooRepo;
 
     /**
      * Handle http request.
@@ -38,7 +43,41 @@ public final class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String handleRequest(final Model model,
             final HttpServletRequest request) {
-        model.addAttribute("fooList", fooDAO.getFeaturedFoos());
+        model.addAttribute("fooList", getCachedFoos());
         return "index";
     }
+
+    /**
+     * Cache the data locally for this example.  Wouldn't do this typically, in
+     * real life you would call readFoos to populate the fooList attribute.
+     * @return The featured foos.
+     */
+    private List<Foo> getCachedFoos() {
+        if (ff == null) {
+            ff = readFoos();
+            if (ff.isEmpty()) {
+                for (Foo foo : new FooSampleData().getArray()) {
+                    fooRepo.save(foo);
+                }
+                ff = readFoos();
+            }
+        }
+        return ff;
+    }
+
+    /**
+     * @return List of Foo Objects read from the data repository.
+     */
+    private List<Foo> readFoos() {
+        ArrayList<Foo> foos = new ArrayList<Foo>();
+        for (Foo foo : fooRepo.findAll()) {
+            foos.add(foo);
+        }
+        return foos;
+    }
+
+    /**
+     * Featured foos.
+     */
+    private List<Foo> ff;
 }
